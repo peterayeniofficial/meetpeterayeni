@@ -1,8 +1,17 @@
 #!/usr/bin/env node
-const clearConsole = require('clear-any-console');
+const welcome = require('cli-welcome');
+const pkgJSON = require('./package.json');
 
-// clear the console
-clearConsole();
+welcome({
+  title: pkgJSON.name,
+  tagLine: 'Nice to meet you',
+  description: pkgJSON.description,
+  version: pkgJSON.version,
+  bgColor: '#00bcd4',
+  color: '#ffffff',
+  bold: true,
+  clear: true,
+});
 
 console.log(`
 Peter Ayeni
