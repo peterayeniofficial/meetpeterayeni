@@ -1,4 +1,9 @@
 #!/usr/bin/env node
+const clearConsole = require('clear-any-console');
+
+// clear the console
+clearConsole();
+
 console.log(`
 Peter Ayeni
 Software Engineer
