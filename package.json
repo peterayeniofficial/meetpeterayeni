@@ -7,5 +7,20 @@
   },
   "dependencies": {
     "cli-welcome": "^2.2.2"
-  }
+  },
+  "keywords": [
+    "peter",
+    "ayeni",
+    "npx",
+    "cli",
+    "welcome"
+  ],
+  "author": {
+    "name": "Peter Ayeni",
+    "email": "ayenicology@gmail.com",
+    "url": "https://linkedin.com/in/peterayeni"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "peterayeniofficial/meetpeterayeni"
 }
