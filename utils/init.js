@@ -1,11 +1,11 @@
 const checkNode = require('cli-check-node');
 const unhandled = require('cli-handle-unhandled');
+
 const welcome = require('cli-welcome');
 const pkgJSON = require('./../package.json');
 
 module.exports = () => {
   unhandled();
-  checkNode('10');
   welcome({
     title: pkgJSON.name,
     tagLine: 'Nice to meet you',
@@ -16,4 +16,6 @@ module.exports = () => {
     bold: true,
     clear: true,
   });
+
+  checkNode();
 };
