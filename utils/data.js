@@ -28,8 +28,8 @@ Software Engineer
 
 ${dimItalic(`Peter is an award-winning Social Innovator, Software Engineer, and Mentor passionate about 
 using design and technology for social good. He has worked as a Technical Mentor for Udacity React
- Nanodegree, and Frontend Developer at Previsico. He has an International Diploma in Computing 
- from Informatics Singapore and a BBA in IT Security from SMC Switzerland.`)}
+Nanodegree, and Frontend Developer at Previsico. He has an International Diploma in Computing 
+from Informatics Singapore and a BBA in IT Security from SMC Switzerland.`)}
 `;
 const ad = `Check out my Upcoming Training: `;
 

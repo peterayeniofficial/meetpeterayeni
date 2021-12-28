@@ -4,49 +4,27 @@ import meow from 'meow';
 import alert from 'cli-alerts';
 import handleError from 'cli-handle-error';
 
+import cli from './utils/cli.js';
 const log = console.log;
 import init from './utils/init.js';
 import { data } from './utils/data.js';
 const { social, bio, ad } = data;
 
-const helpText = `	
-Usage
-	  npx peterayeni <command> [options]
-
-	Options
-	  social      Show the social info
-    --no-social Don't show the social info
-    ad          Show the ad info
-    --no-ad     Don't show the ad info
-
-	Examples
-	  npx peterayeni --no-social
-`;
-const options = {
-  importMeta: import.meta,
-  flags: {
-    social: {
-      type: 'boolean',
-      default: true,
-    },
-    ad: {
-      type: 'boolean',
-      default: true,
-    },
-  },
-};
-
-const cli = meow(helpText, options);
 const input = cli.input;
 const flags = cli.flags;
+const pkg = cli.pkg;
 
 (async () => {
-  init(cli);
-  log(bio);
-  if (flags.social) {
-    log(social);
-  }
-  if (flags.ad) {
-    alert({ type: 'info', msg: ad });
+  init(pkg, flags.minimal, flags.clear);
+  input.includes('help') && cli.showHelp(0);
+  flags.bio && log(bio);
+  flags.social && log(social);
+  flags.ad && alert({ type: 'info', msg: ad });
+  if (flags.debug) {
+    alert({ type: 'warning', msg: 'Debug mode is on' });
+    alert({ type: 'info', msg: 'CLI DATA' });
+    log(`input:`, input);
+    log(`flags: `, flags);
+    log();
   }
 })();
