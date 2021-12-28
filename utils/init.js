@@ -1,16 +1,15 @@
-const checkNode = require('cli-check-node');
-const unhandled = require('cli-handle-unhandled');
+import checkNode from 'cli-check-node';
+import unhandled from 'cli-handle-unhandled';
 
-const welcome = require('cli-welcome');
-const pkgJSON = require('./../package.json');
+import welcome from 'cli-welcome';
 
-module.exports = () => {
+const init = (init) => {
   unhandled();
   welcome({
-    title: pkgJSON.name,
+    title: init.pkg?.name,
     tagLine: 'Nice to meet you',
-    description: pkgJSON.description,
-    version: pkgJSON.version,
+    description: init.pkg?.description,
+    version: init.pkg?.version,
     bgColor: '#00bcd4',
     color: '#ffffff',
     bold: true,
@@ -19,3 +18,5 @@ module.exports = () => {
 
   checkNode();
 };
+
+export default init;
